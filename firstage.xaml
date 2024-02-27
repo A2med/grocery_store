@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gerocery.firstage"
+             Title="firstage"
+             x:Name="page"
+             xmlns:vm="clr-namespace:Gerocery.ViewModels"
+             Shell.NavBarIsVisible="False">
+
+    <ContentPage.BindingContext>
+        <vm:firstPageViewModel></vm:firstPageViewModel>
+    </ContentPage.BindingContext>
+    <Grid  RowSpacing="50">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="400" ></RowDefinition>
+            <RowDefinition Height="100"></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+
+        <StackLayout   BackgroundColor="#2177C0"  >
+
+            <Label    VerticalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="35" FontAttributes="Bold" TextColor="White"  >
+               
+
+                <Label.Text>
+                    مكسب
+maxab
+
+                </Label.Text>
+
+            </Label>
+           
+           
+        </StackLayout>
+
+        <StackLayout Grid.Row="1" Spacing="15" >
+           
+
+            <Label Text="السوق في جيبك" HorizontalTextAlignment="Center" FontSize="30" FontAttributes="Bold" />
+            <Label Text="كل المنتجات  اللي هتحتاجها لمحلك في تطبيق مكسب واحدث المنتجات وافضل الاسعار" HorizontalTextAlignment="Center" FontSize="20" Margin="10" TextColor="#777777" />
+
+          
+            
+
+
+
+        </StackLayout>
+        <StackLayout Grid.Row="2" Margin="10" >
+            <Button Text="ابدأ مع مكسب" TextColor="White"   FontSize="25" Command="{Binding Btn}" BackgroundColor="#2177C0"/>
+        </StackLayout>
+
+    </Grid>
+</ContentPage>

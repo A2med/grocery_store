@@ -1,0 +1,131 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net7.0-android;net7.0-ios;net7.0-maccatalyst</TargetFrameworks>
+		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net7.0-windows10.0.19041.0</TargetFrameworks>
+		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
+		<!-- <TargetFrameworks>$(TargetFrameworks);net7.0-tizen</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>Gerocery</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>Gerocery</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.companyname.gerocery</ApplicationId>
+		<ApplicationIdGuid>8c150f9e-2839-46cd-987f-08e32a381f61</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">11.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">13.1</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!-- Images -->
+		<MauiImage Include="Resources\Images\*" />
+		<MauiImage Update="Resources\Images\dotnet_bot.svg" BaseSize="168,208" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="Resources\Fonts\*" />
+
+		<!-- Raw Assets (also remove the "Resources\Raw" prefix) -->
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\Images\ayaa.jpeg" />
+	  <None Remove="Resources\Images\battery.png" />
+	  <None Remove="Resources\Images\canned.png" />
+	  <None Remove="Resources\Images\cards.png" />
+	  <None Remove="Resources\Images\carrt.png" />
+	  <None Remove="Resources\Images\cereal.png" />
+	  <None Remove="Resources\Images\diapers.png" />
+	  <None Remove="Resources\Images\diet.png" />
+	  <None Remove="Resources\Images\download.jpg" />
+	  <None Remove="Resources\Images\email.png" />
+	  <None Remove="Resources\Images\firouz.jpg" />
+	  <None Remove="Resources\Images\food.png" />
+	  <None Remove="Resources\Images\good.jpg" />
+	  <None Remove="Resources\Images\grocery.png" />
+	  <None Remove="Resources\Images\images.jpg" />
+	  <None Remove="Resources\Images\mirnda.jpg" />
+	  <None Remove="Resources\Images\mobile.png" />
+	  <None Remove="Resources\Images\oxi.jpeg" />
+	  <None Remove="Resources\Images\pam.jpg" />
+	  <None Remove="Resources\Images\pamp.jpeg" />
+	  <None Remove="Resources\Images\password.png" />
+	  <None Remove="Resources\Images\pasta.png" />
+	  <None Remove="Resources\Images\pepsi.jpeg" />
+	  <None Remove="Resources\Images\pessi.jpg" />
+	  <None Remove="Resources\Images\rani.jpg" />
+	  <None Remove="Resources\Images\ro.jpg" />
+	  <None Remove="Resources\Images\ror.jpg" />
+	  <None Remove="Resources\Images\roro.jpg" />
+	  <None Remove="Resources\Images\sevin.jpg" />
+	  <None Remove="Resources\Images\sh.jpg" />
+	  <None Remove="Resources\Images\shampoo.png" />
+	  <None Remove="Resources\Images\shi.jpg" />
+	  <None Remove="Resources\Images\ship.jpg" />
+	  <None Remove="Resources\Images\shipss.jpg" />
+	  <None Remove="Resources\Images\snack.png" />
+	  <None Remove="Resources\Images\soft.png" />
+	  <None Remove="Resources\Images\som.jpeg" />
+	  <None Remove="Resources\Images\soma.jpeg" />
+	  <None Remove="Resources\Images\somaa.jpeg" />
+	  <None Remove="Resources\Images\sweets.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="FirebaseAuthentication.net" Version="4.1.0" />
+		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="7.0.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.6" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <Compile Update="Login.xaml.cs">
+	    <DependentUpon>Login.xaml</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <MauiXaml Update="drink.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="firstage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Login.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="Page1.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="SelectedPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="ships.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="shopping.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	</ItemGroup>
+
+</Project>

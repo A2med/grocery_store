@@ -1,0 +1,88 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net7.0-ios
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Gerocery
+build_property.ProjectDir = E:\project maui\Gerocery\
+build_property.EnableComHosting = 
+
+[E:/project maui/Gerocery/App.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.App.xaml
+build_metadata.AdditionalFiles.TargetPath = App.xaml
+build_metadata.AdditionalFiles.RelativePath = App.xaml
+
+[E:/project maui/Gerocery/AppShell.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.AppShell.xaml
+build_metadata.AdditionalFiles.TargetPath = AppShell.xaml
+build_metadata.AdditionalFiles.RelativePath = AppShell.xaml
+
+[E:/project maui/Gerocery/drink.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.drink.xaml
+build_metadata.AdditionalFiles.TargetPath = drink.xaml
+build_metadata.AdditionalFiles.RelativePath = drink.xaml
+
+[E:/project maui/Gerocery/firstage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.firstage.xaml
+build_metadata.AdditionalFiles.TargetPath = firstage.xaml
+build_metadata.AdditionalFiles.RelativePath = firstage.xaml
+
+[E:/project maui/Gerocery/Login.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.Login.xaml
+build_metadata.AdditionalFiles.TargetPath = Login.xaml
+build_metadata.AdditionalFiles.RelativePath = Login.xaml
+
+[E:/project maui/Gerocery/MainPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.MainPage.xaml
+build_metadata.AdditionalFiles.TargetPath = MainPage.xaml
+build_metadata.AdditionalFiles.RelativePath = MainPage.xaml
+
+[E:/project maui/Gerocery/Page1.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.Page1.xaml
+build_metadata.AdditionalFiles.TargetPath = Page1.xaml
+build_metadata.AdditionalFiles.RelativePath = Page1.xaml
+
+[E:/project maui/Gerocery/Resources/Styles/Colors.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.Resources.Styles.Colors.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Colors.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Colors.xaml
+
+[E:/project maui/Gerocery/Resources/Styles/Styles.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.Resources.Styles.Styles.xaml
+build_metadata.AdditionalFiles.TargetPath = Resources\Styles\Styles.xaml
+build_metadata.AdditionalFiles.RelativePath = Resources\Styles\Styles.xaml
+
+[E:/project maui/Gerocery/SelectedPage.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.SelectedPage.xaml
+build_metadata.AdditionalFiles.TargetPath = SelectedPage.xaml
+build_metadata.AdditionalFiles.RelativePath = SelectedPage.xaml
+
+[E:/project maui/Gerocery/ships.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.ships.xaml
+build_metadata.AdditionalFiles.TargetPath = ships.xaml
+build_metadata.AdditionalFiles.RelativePath = ships.xaml
+
+[E:/project maui/Gerocery/shopping.xaml]
+build_metadata.AdditionalFiles.GenKind = Xaml
+build_metadata.AdditionalFiles.ManifestResourceName = Gerocery.shopping.xaml
+build_metadata.AdditionalFiles.TargetPath = shopping.xaml
+build_metadata.AdditionalFiles.RelativePath = shopping.xaml

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gerocery.drink"
+             Shell.NavBarIsVisible="False"
+             Title="drink">
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="15"  >
+            <Image  WidthRequest="350" HeightRequest="150" Source="soft.png"/>
+            <Label  HorizontalTextAlignment="Center" FontSize="20" Text="مشروبات" />
+
+
+            <ScrollView Orientation="Vertical">
+
+                <CollectionView x:Name="collview" >
+
+                    <CollectionView.ItemsLayout >
+                        <GridItemsLayout Orientation="Vertical" Span="2" HorizontalItemSpacing="10" VerticalItemSpacing="5" ></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+
+                            <StackLayout >
+
+                                <Border HeightRequest="220" WidthRequest="190" >
+
+                                    <StackLayout Margin="4" Spacing="4">
+
+                                        <Image Source="{Binding Image }" WidthRequest="70" HeightRequest="80"/>
+                                        <HorizontalStackLayout HorizontalOptions="End" Spacing="5">
+                                            <Label Text="ج.م"/>
+                                            <Label Text="{Binding salary}" HorizontalTextAlignment="End"/>
+
+                                        </HorizontalStackLayout>
+                                        <Label Text="{Binding ItemName}" HorizontalTextAlignment="End"/>
+                                        <Button  WidthRequest="150" BackgroundColor="#2177C0"   Text="اضف الي السلة"
+                                                 Clicked="Button_Clicked"
+                                          
+
+                                                                     HorizontalOptions="Center">
+
+
+
+                                        </Button>
+
+
+                                    </StackLayout>
+
+
+                                </Border>
+
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

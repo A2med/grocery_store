@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gerocery.Page1"
+             Title="مكسب"
+             BackgroundColor="#F3F4F8"
+             
+             
+             Shell.BackgroundColor="White"
+             Shell.NavBarIsVisible="False"
+             xmlns:vm="clr-namespace:Gerocery.ViewModels"
+             x:Name="page"
+             >
+
+    <ContentPage.BindingContext>
+        <vm:Page1ViewModel></vm:Page1ViewModel>
+    </ContentPage.BindingContext>
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            
+            <Style TargetType="VerticalStackLayout">
+                <Setter Property="VisualStateManager.VisualStateGroups">
+
+                    <VisualStateGroupList>
+                        <VisualStateGroup x:Name="CommonStates">
+                            <VisualState x:Name="Normal"></VisualState>
+                            <VisualState x:Name="Selected">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="Transparent"></Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+                
+            </Style>
+         
+            
+           
+        </ResourceDictionary>
+        
+       
+    </ContentPage.Resources>
+   
+    <ScrollView>
+        <AbsoluteLayout>
+            <VerticalStackLayout Margin="10" Spacing="10">
+
+        <SearchBar Placeholder="بتدور علي منتج معين؟" FontSize="20" x:Name="serch" Text="{Binding category.name}" SearchCommand="{Binding search}"></SearchBar>
+        <CarouselView  IndicatorView="indector" ItemsSource="{Binding lst}">
+            <CarouselView.ItemTemplate>
+                <DataTemplate>
+                    <StackLayout>
+                                <Image Source="{Binding imageName}" WidthRequest="370" HeightRequest="100"  Aspect="Fill" />
+                    </StackLayout>
+                </DataTemplate>
+            </CarouselView.ItemTemplate>
+        </CarouselView>
+        <IndicatorView x:Name="indector" IndicatorColor="LightGray" SelectedIndicatorColor="DarkGray" HorizontalOptions="Center"></IndicatorView>
+          
+           
+        
+        <Label Text="تصفح الاقسام" FontSize="25" HorizontalTextAlignment="End" ></Label>
+                <CollectionView  SelectionMode="Single"  ItemsSource="{Binding lstview}" SelectedItem="{Binding category}" SelectionChangedCommand="{Binding select}"  >
+            <CollectionView.ItemsLayout>
+                <GridItemsLayout Orientation="Vertical" Span="3" VerticalItemSpacing="5" HorizontalItemSpacing="5" ></GridItemsLayout>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate>
+                <DataTemplate >
+                    <VerticalStackLayout Spacing="10">
+                        
+                        <Border StrokeShape="RoundRectangle" WidthRequest="120" HeightRequest="120">
+                            <StackLayout Spacing="5" Margin="10">
+                                        <Image Source="{Binding image }" WidthRequest="60" />
+                                        <Label Text="{Binding name}" HorizontalTextAlignment="Center" />
+                            </StackLayout>
+
+                        </Border>
+
+                        <!--<Border StrokeShape="RoundRectangle" WidthRequest="120"
+                                HeightRequest="120">
+                            <StackLayout Spacing="5" Margin="10">
+                                <Image Source="{Binding image}" WidthRequest="60" HorizontalOptions="Center"/>
+                                <Label Text="{Binding name}" HorizontalTextAlignment="Center"/>
+                            </StackLayout>
+
+                        </Border>-->
+
+                    </VerticalStackLayout>
+                </DataTemplate>
+
+
+
+
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+
+
+
+                <Border HeightRequest="60" WidthRequest="70"  BackgroundColor="#2177C0" VerticalOptions="Start" HorizontalOptions="Start">
+                    <Border.StrokeShape>
+                        <RoundRectangle CornerRadius="20,20,20,20"></RoundRectangle>
+                    </Border.StrokeShape>
+                    <ImageButton WidthRequest="30" BackgroundColor="Transparent" AbsoluteLayout.LayoutFlags="PositionProportional" AbsoluteLayout.LayoutBounds="0,1" Clicked="ImageButton_Clicked">
+            <ImageButton.Source >
+                        <FontImageSource FontFamily="fontawsome" Glyph=""   ></FontImageSource>
+            </ImageButton.Source>
+        </ImageButton>
+                </Border>
+        
+    </VerticalStackLayout>
+        </AbsoluteLayout>
+    </ScrollView>
+</ContentPage>

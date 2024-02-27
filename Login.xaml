@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gerocery.Login"
+             xmlns:vm="clr-namespace:Gerocery.ViewModels"
+            
+             Shell.NavBarIsVisible="False"
+             
+             Title="Login">
+    <!--<ContentPage.BindingContext>
+        <vm:LoginViewModel></vm:LoginViewModel>
+    </ContentPage.BindingContext>-->
+    <VerticalStackLayout Margin="15">
+        <Image Source="carrt" HeightRequest="150" WidthRequest="200" BackgroundColor="White" HorizontalOptions="Center"/>
+        <Label Text="an online grocery store" Margin="0,40,0,40" FontSize="20" HorizontalTextAlignment="Center"/>
+
+        <Grid RowSpacing="15"   RowDefinitions="auto,auto, auto,auto"> 
+            <Border Grid.Row="2"
+               
+            
+            >
+
+            <Border.StrokeShape>
+                <RoundRectangle CornerRadius="20"></RoundRectangle>
+            </Border.StrokeShape>
+
+                <HorizontalStackLayout>
+                    <Image Source="email.png" WidthRequest="40" HeightRequest="40"/>
+                    <Entry Placeholder="your email"   HorizontalOptions="FillAndExpand" FontSize="15" CharacterSpacing="5" Text="{Binding email}"  />
+                </HorizontalStackLayout>
+            </Border>
+
+            <Border 
+       Grid.Row="3"
+    
+    >
+
+                <Border.StrokeShape>
+                    <RoundRectangle CornerRadius="20"></RoundRectangle>
+                </Border.StrokeShape>
+                <HorizontalStackLayout>
+                    <Image Source="password.png" WidthRequest="40" HeightRequest="40"/>
+                    <Entry Placeholder="your password"  IsPassword="True" HorizontalOptions="FillAndExpand" FontSize="15" CharacterSpacing="5" x:Name="password" Text="{Binding password}" />
+                </HorizontalStackLayout>
+            </Border>
+
+        </Grid>
+
+        <Button Text="login" Margin="10,40,10,40" Command="{Binding sign}" BackgroundColor="#2177C0"/>
+
+        <HorizontalStackLayout Spacing="5" HorizontalOptions="CenterAndExpand">
+            <Label Text="Donot have an account ?"/>
+            <Label Text="sign up" TextColor="#4527a0" />
+        </HorizontalStackLayout>
+
+
+    </VerticalStackLayout>
+</ContentPage>

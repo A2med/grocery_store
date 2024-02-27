@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Gerocery.SelectedPage"
+             BackgroundColor="#F3F4F8"
+             Shell.NavBarIsVisible="False"
+             Title="SelectedPage"
+             xmlns:vm="clr-namespace:Gerocery.ViewModels"
+             x:Name="page"
+           
+             
+             >
+    
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button" x:Key="PrimaryButton"  >
+                <Setter Property="VisualStateManager.VisualStateGroups">
+                    <VisualStateGroupList >
+                        <VisualStateGroup x:Name="CommonStates">
+
+                            <VisualState x:Name="Normal">
+                                <VisualState.Setters>
+                                    <Setter Property="BackgroundColor" Value="AliceBlue"></Setter>
+                                </VisualState.Setters>
+                            </VisualState>
+
+
+                            <VisualState x:Name="Focused">
+
+                                <VisualState.Setters>
+
+                                    <Setter Property="BackgroundColor" Value="Green" />
+
+                                </VisualState.Setters>
+                            </VisualState>
+                        </VisualStateGroup>
+                    </VisualStateGroupList>
+                </Setter>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ScrollView Orientation="Vertical">
+        <VerticalStackLayout Padding="10" Spacing="15" >
+            <Image  WidthRequest="350" HeightRequest="150" Source="good.jpg"/>
+            <Label  HorizontalTextAlignment="Center" FontSize="20" Text="بامبرز اطفال" />
+
+
+            <ScrollView Orientation="Vertical">
+
+                <CollectionView x:Name="collview" ItemsSource="{Binding lst}" >
+
+                    <CollectionView.ItemsLayout >
+                        <GridItemsLayout Orientation="Vertical" Span="4" HorizontalItemSpacing="10" VerticalItemSpacing="5"  ></GridItemsLayout>
+                    </CollectionView.ItemsLayout>
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+
+
+                            <StackLayout >
+
+                                <Border HeightRequest="220" WidthRequest="190" >
+
+
+
+                                    <StackLayout Margin="4" Spacing="4">
+
+                                        <Image Source="{Binding imageName}" WidthRequest="70" HeightRequest="80"/>
+                                        <HorizontalStackLayout HorizontalOptions="End" Spacing="5">
+                                            <Label Text="ج.م"/>
+                                            <Label Text="{Binding itemName}" HorizontalTextAlignment="End"/>
+
+                                        </HorizontalStackLayout>
+                                        <Label Text="{Binding salesPrice}" HorizontalTextAlignment="End"/>
+
+                                        <!--<Button  WidthRequest="150" BackgroundColor="#2177C0"   Text="اضف الي السلة" Command="{Binding BindingContext.items,Source={x:Reference page}}" CommandParameter="{Binding}" 
+                                                 
+
+                                                                            HorizontalOptions="Center">
+                                        
+
+
+
+                                        </Button>-->
+                                        <Button Command="{Binding BindingContext.SaveOrder,Source={x:Reference page} }"/>
+
+
+
+
+                                    </StackLayout>
+
+
+
+                                </Border>
+
+                            </StackLayout>
+
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </ScrollView>
+            <!--<Button Command="{Binding SaveOrder}"/>-->
+
+
+
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
